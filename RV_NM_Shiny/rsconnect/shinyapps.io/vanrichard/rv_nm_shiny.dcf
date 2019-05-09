@@ -1,0 +1,10 @@
+name: rv_nm_shiny
+title:
+username:
+account: vanrichard
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 921126
+bundleId: 2073577
+url: https://vanrichard.shinyapps.io/rv_nm_shiny/
+when: 1557440723.94794
