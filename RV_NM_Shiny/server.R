@@ -9,7 +9,7 @@
 
 library(shiny)
 library(tidyverse)
-data <- read.csv("~/Shiny_Richard.Natasha/RV_NM_Shiny/Tomato.csv")
+data <- read.csv("Tomato.csv")
 tomato <- transform(data, ratio = leafleng / leafwid)
 
 
