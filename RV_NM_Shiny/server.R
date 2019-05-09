@@ -23,7 +23,7 @@ shinyServer(function(input, output) {
                      aes(x=leafleng, 
                          y=leafwid)) +
       geom_point(aes_string(color=input$Characters)) +
-      geom_abline(slope=1, intercept=0)
+      geom_abline(slope=1, intercept=0) #geom_abline displays a 1:1 ratio for length and width
     
     species_color
   })
