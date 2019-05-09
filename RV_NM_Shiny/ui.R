@@ -8,7 +8,7 @@
 #
 
 library(shiny)
-library(ggplot)
+library(ggplot2)
 
 # Define UI for application that draws a histogram
 shinyUI(fluidPage(
@@ -21,8 +21,8 @@ shinyUI(fluidPage(
     sidebarPanel(
        radioButtons("Characters",
                    "Display by",
-                   c("Altitude",
-                   "Species")
+                   c("alt",
+                   "species")
     )),
     
     # Show a plot of the generated distribution

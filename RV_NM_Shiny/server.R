@@ -8,20 +8,23 @@
 #
 
 library(shiny)
-library(ggplot)
+library(tidyverse)
+data <- read.csv("~/Shiny_Richard.Natasha/RV_NM_Shiny/Tomato.csv")
+tomato <- transform(data, ratio = leafleng / leafwid)
+
+
 
 # Define server logic required to draw a histogram
 shinyServer(function(input, output) {
    
-  output$distPlot <- renderPlot({
+  output$scatterPlot <- renderPlot({
     
-    # generate bins based on input$bins from ui.R
-    x    <- faithful[, 2] 
-    bins <- seq(min(x), max(x), length.out = input$bins + 1)
+    species_color <- ggplot(data=tomato, 
+                     aes(x=leafleng, 
+                         y=leafwid)) +
+      geom_point(aes_string(color=input$Characters)) +
+      geom_abline(slope=1, intercept=0)
     
-    # draw the histogram with the specified number of bins
-    hist(x, breaks = bins, col = 'darkgray', border = 'white')
-    
+    species_color
   })
-  
 })
